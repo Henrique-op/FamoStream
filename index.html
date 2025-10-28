@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="pt-BR">  
+<head>  
+  <meta charset="utf-8"/>  
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>  
+  <title>FamoStream — Todos os meus vídeos</title>  
+  <meta name="google-adsense-account" content="ca-pub-2623532298232783">  
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2623532298232783" crossorigin="anonymous"></script>  
+  <style>  
+    :root {  
+      --accent: #00ffff;  
+      --bg1: #060708;  
+      --bg2: #0b0b0b;  
+      --muted: #9fb4c8;  
+      --card: rgba(255,255,255,0.04);  
+    }  
+    * { box-sizing: border-box; margin: 0; padding: 0; }  
+    body {  
+      font-family: 'Poppins', system-ui, sans-serif;  
+      background: linear-gradient(180deg,var(--bg1),var(--bg2));  
+      color: #f0f9ff;  
+      transition: background .4s, color .4s;  
+    }  
+    header {  
+      position: fixed; top: 0; left: 0; right: 0;  
+      height: 58px; display: flex; align-items: center; justify-content: space-between;  
+      background: rgba(0,0,0,0.6); backdrop-filter: blur(8px); padding: 0 16px;  
+      box-shadow: 0 2px 12px rgba(0,0,0,0.4); z-index: 100;  
+    }  
+    .brand { font-weight: 700; color: var(--accent); font-size: 18px; }  
+    #hamburger { width: 42px; height: 42px; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: var(--accent); background: var(--card); font-size: 22px; cursor: pointer; border: 1px solid rgba(0,255,255,0.1); z-index: 150; }  
+    .sidebar { position: fixed; top: 0; left: -260px; width: 240px; height: 100vh; background: #090b0c; box-shadow: 4px 0 20px rgba(0,0,0,0.6); transition: left .3s ease; padding-top: 70px; z-index: 120; }  
+    .sidebar.show { left: 0; }  
+    .sidebar a { display: block; padding: 14px 20px; color: var(--accent); text-decoration: none; border-left: 3px solid transparent; font-weight: 600; }  
+    .sidebar a:hover { background: rgba(255,255,255,0.05); border-left-color: var(--accent); color: #fff; }  
+    main { padding: 80px 16px 70px 16px; max-width: 700px; margin: 0 auto; }  
+    h2 { margin-bottom: 10px; color: #fff; font-size: 20px; }  
+    .video-list { display: grid; gap: 16px; }  
+    iframe { width: 100%; aspect-ratio: 9/16; border-radius: 12px; border: none; background: #000; }  
+    .welcome { background: var(--card); border: 1px solid rgba(255,255,255,0.05); padding: 16px; border-radius: 10px; margin-bottom: 16px; text-align: center; font-size: 15px; color: var(--muted); }  
+    .btn-social { display: inline-block; width: 100%; text-align: center; padding: 14px; margin-top: 12px; border-radius: 10px; color: #fff; font-weight: 700; text-decoration: none; transition: transform .2s; }  
+    .btn-social:hover { transform: scale(1.03); }  
+    .yt { background: #ff0000; }  
+    .tt { background: #000; }  
+    .ig { background: linear-gradient(45deg,#f58529,#dd2a7b,#8134af,#515bd4); }  
+    .fb { background: #1877f2; }  
+    footer { text-align: center; padding: 20px; color: var(--muted); font-size: 13px; }  
+    #themeToggle { position: fixed; bottom: 22px; right: 22px; width: 52px; height: 52px; border-radius: 50%; background: var(--accent); color: #000; display: flex; align-items: center; justify-content: center; font-size: 20px; cursor: pointer; box-shadow: 0 0 15px rgba(0,255,255,0.4); transition: transform .2s; z-index: 200; }  
+    #themeToggle:active { transform: scale(0.9); }  
+    body.light { background: #fdfdfd; color: #222; }  
+    body.light header { background: rgba(255,255,255,0.8); color: #000; }  
+    body.light .brand { color: #007bff; }  
+    body.light .sidebar { background: #f1f1f1; color: #000; }  
+    .fb-video-container { position: relative; width: 100%; padding-top: 177.78%; overflow: hidden; border-radius: 12px; background: #000; }  
+    .fb-video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }  
+  </style>  
+</head>  
+<body>  
+<header>  
+  <div id="hamburger">☰</div>  
+  <div class="brand">FamoStream</div>  
+</header>  
+
+<nav class="sidebar" id="sidebar">  
+  <a href="#" onclick="showTab('youtube')">🎬 YouTube</a>  
+  <a href="#" onclick="showTab('tiktok')">🎭 TikTok</a>  
+  <a href="#" onclick="showTab('instagram')">📸 Instagram</a>  
+  <a href="#" onclick="showTab('facebook')">📘 Facebook</a>  
+</nav>  
+
+<main>  
+  <div class="welcome">✨ Bem-vindo ao <b>FamoStream</b> — todos os meus vídeos num só lugar!</div>  
+
+  <section id="youtube">  
+    <h2>YouTube</h2>  
+    <div class="video-list">  
+      <iframe src="https://www.youtube.com/embed/PwXBYqJFCaw" allowfullscreen loading="lazy"></iframe>  
+      <iframe src="https://www.youtube.com/embed/gMyz0DVs8aw" allowfullscreen loading="lazy"></iframe>  
+      <iframe src="https://www.youtube.com/embed/rrt6mEvm6nY" allowfullscreen loading="lazy"></iframe>  
+      <iframe src="https://www.youtube.com/embed/sZHB1S3IzqQ" allowfullscreen loading="lazy"></iframe>  
+      <iframe src="https://www.youtube.com/embed/ub9pZLEVzLs" allowfullscreen loading="lazy"></iframe>  
+    </div>  
+    <a href="https://youtube.com/@fatilson0" target="_blank" class="btn-social yt">Ver perfil no YouTube</a>  
+  </section>  
+
+  <section id="tiktok" style="display:none">  
+    <h2>TikTok</h2>  
+    <div id="tiktok-list" class="video-list"></div>  
+    <a href="https://www.tiktok.com/@sil.va8321?_t=ZM-90uhjYyuAgt&_r=1" target="_blank" class="btn-social tt">Ver perfil no TikTok</a>  
+  </section>  
+
+  <section id="instagram" style="display:none">  
+    <h2>Instagram</h2>  
+    <div class="video-list">  
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DK8DI8VgTcG/"></blockquote>  
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DP_uzR9jFOt/"></blockquote>  
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DPyKl6_jJoF/"></blockquote>  
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DPuNodFgMCI/"></blockquote>  
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DPq2LAojCO-/"></blockquote>  
+    </div>  
+    <script async src="//www.instagram.com/embed.js"></script>  
+    <a href="https://www.instagram.com/fatilson_0_/" target="_blank" class="btn-social ig">Ver perfil no Instagram</a>  
+  </section>  
+
+  <section id="facebook" style="display:none">  
+    <h2>Facebook</h2>  
+    <div class="video-list">  
+      <div class="fb-video-container"><iframe src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/reel/1565407584821083/&show_text=false" allowfullscreen loading="lazy"></iframe></div>  
+      <div class="fb-video-container"><iframe src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/reel/801554106177856/&show_text=false" allowfullscreen loading="lazy"></iframe></div>  
+      <div class="fb-video-container"><iframe src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/reel/1171808341518058/&show_text=false" allowfullscreen loading="lazy"></iframe></div>  
+      <div class="fb-video-container"><iframe src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/reel/1495444178165762/&show_text=false" allowfullscreen loading="lazy"></iframe></div>  
+      <div class="fb-video-container"><iframe src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/reel/2124640897974355/&show_text=false" allowfullscreen loading="lazy"></iframe></div>  
+    </div>  
+    <a href="https://www.facebook.com/FamoComedy" target="_blank" class="btn-social fb">Ver perfil no Facebook</a>  
+  </section>  
+
+  <footer>© 2025 FamoStream. Todos os direitos reservados.</footer>  
+</main>  
+
+<div id="themeToggle">☀️</div>  
+<script async src="https://www.instagram.com/embed.js"></script>  
+<script>  
+const sidebar=document.getElementById('sidebar');  
+const hamburger=document.getElementById('hamburger');  
+hamburger.addEventListener('click',()=>sidebar.classList.toggle('show'));  
+
+function showTab(id){  
+  document.querySelectorAll('main section').forEach(s=>s.style.display='none');  
+  document.getElementById(id).style.display='block';  
+  sidebar.classList.remove('show');  
+  window.scrollTo({top:0,behavior:'smooth'});  
+}  
+
+const toggle=document.getElementById('themeToggle');  
+toggle.addEventListener('click',()=>{  
+  document.body.classList.toggle('light');  
+  toggle.textContent=document.body.classList.contains('light')?'🌙':'☀️';  
+});  
+</script>  
+</body>  
+</html>
